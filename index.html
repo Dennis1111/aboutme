@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page | Simple Portfolio Example</title>
+    <meta name="description" content="A simple web page portfolio example showcasing basic HTML, CSS, and JavaScript.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Page</h1>
+        <nav role="navigation">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation">
+            <label for="nav-toggle" class="hamburger" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul>
+                <li><a href="#content">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>This is a brief introduction about myself.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Git &amp; GitHub</li>
+            </ul>
+        </section>
+        <section id="content">
+            <p>This is a simple web page.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <article>
+                <figure>
+                    <img src="proj1.png" alt="Homepage of my Portfolio Website showing navigation and featured projects" width="200">
+                    <figcaption><h3>Project 1: Portfolio Website</h3></figcaption>
+                </figure>
+                <p>A personal portfolio website built with HTML, CSS, and JavaScript.</p>
+            </article>
+            <article>
+                <figure>
+                    <img src="LGBTQ.png" alt="To-Do App interface with task list and controls for adding and removing tasks" width="200">
+                    <figcaption><h3>Project 2: To-Do App</h3></figcaption>
+                </figure>
+                <p>A simple to-do list application to manage daily tasks.</p>
+            </article>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form role="form">
+                <div>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; 2025 My Web Page</p>
+    </footer>
+    <script>
+        // Inline script for demonstration
+        console.log("Inline script executed.");
+    </script>
+</body>
+</html>

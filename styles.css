@@ -1,0 +1,444 @@
+/* ...existing code... */
+
+body {
+    background-color: #fff;
+    color: #222;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: block; /* Remove flex for sidebar */
+    min-height: unset;
+}
+
+header {
+    background-color: #003366;
+    color: #fff;
+    padding: 1em 0 0.5em 0; /* Reduce vertical padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+}
+
+header h1 {
+    margin: 0 0 0.5em 1em; /* Less left margin */
+    font-size: 1.5em;      /* Slightly smaller */
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    z-index: 2;
+    color: #fff; /* Ensure the heading is white on dark background */
+}
+
+header, footer {
+    background-color: #003366;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav[role="navigation"] {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:focus, nav a:hover {
+    background-color: #ffcc00;
+    color: #003366;
+    text-decoration: none;
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+main {
+    margin-left: 0;
+    padding: 2em;
+    background-color: #f9f9f9;
+    color: #222;
+    flex: unset;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h1, h2 {
+    color: #003366;
+}
+
+label {
+    color: #003366;
+    font-weight: bold;
+}
+
+input, textarea {
+    background: #fff;
+    color: #222;
+    border: 1px solid #888;
+    padding: 0.5em;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:focus, button:hover {
+    background-color: #0055a5;
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+form[role="form"] {
+    max-width: 400px;
+    /* Remove centering */
+    margin: 0;
+}
+
+form[role="form"] div {
+    margin-bottom: 1.2em;
+}
+
+form[role="form"] label {
+    display: block;
+    margin-bottom: 0.3em;
+    color: #003366;
+    font-weight: bold;
+}
+
+form[role="form"] input,
+form[role="form"] textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em;
+    border: 1px solid #888;
+    border-radius: 4px;
+    font-size: 1em;
+    background: #fff;
+    color: #222;
+}
+
+form[role="form"] button {
+    margin-top: 0.5em;
+}
+
+#about {
+    text-align: left;
+    padding: 1.5em 0 1.5em 2em;
+    background: #eaf2fb;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+#about h2 {
+    font-size: 1.7em;
+    margin-bottom: 0.5em;
+    color: #003366;
+}
+
+#about p {
+    font-size: 1.15em;
+    margin: 0;
+    color: #222;
+    line-height: 1.7;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em 0 1em 2em;
+    background: #f3f6fa;
+    border-radius: 8px;
+}
+
+#projects h2 {
+    width: 100%;
+    font-size: 1.7em;
+    margin-bottom: 0.5em;
+    color: #003366;
+}
+
+#projects article {
+    background: #fff;
+    border: 1px solid #d0d7e2;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 1.2em;
+    margin: 0;
+    flex: 1 1 260px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects figure {
+    margin: 0 0 1em 0;
+    width: 100%;
+    text-align: center;
+}
+
+#projects img {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+#projects figcaption h3 {
+    font-size: 1.15em;
+    margin: 0.5em 0 0.3em 0;
+    color: #003366;
+}
+
+#projects p {
+    font-size: 1em;
+    color: #222;
+    text-align: center;
+    margin: 0;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 2em;
+}
+
+#skills li {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.7em;
+    font-size: 1.08em;
+    color: #003366;
+}
+
+#skills li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 1em;
+    color: #2e8b57;
+}
+
+/* Responsive images and videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
+    z-index: 3;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    #projects {
+        gap: 1em;
+        padding: 1em 0 1em 1em;
+    }
+    main {
+        padding: 1em;
+    }
+    #about {
+        padding: 1em 0 1em 1em;
+    }
+    header h1 {
+        font-size: 1.2em;
+        margin-left: 0.7em;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1em 0;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 1em;
+        top: 0.5em;
+    }
+    nav[role="navigation"] {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        min-height: 2.5em;
+    }
+    .nav-toggle:checked + .hamburger + ul {
+        display: flex;
+    }
+    header {
+        padding: 0.7em 0 0.3em 0;
+    }
+    header h1 {
+        margin-left: 0.5em;
+        font-size: 1.1em;
+        margin-bottom: 0.2em;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+    }
+    header {
+        width: 100%;
+        min-height: unset;
+        flex-direction: row;
+        align-items: center;
+        position: static;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        padding: 1em 0.5em;
+    }
+    header h1 {
+        margin: 0 1em 0 0.5em;
+        font-size: 1.2em;
+    }
+    nav ul {
+        flex-direction: row;
+        gap: 1em;
+        align-items: center;
+        padding-left: 0;
+    }
+    main {
+        margin-left: 0;
+        padding: 1em;
+    }
+    header h1 {
+        margin-left: 1em;
+        font-size: 1.5em;
+    }
+    nav[role="navigation"] {
+        margin: 0 1em;
+    }
+    #projects {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1em 0;
+    }
+    #projects article {
+        max-width: 100%;
+        margin-bottom: 1em;
+    }
+    #about {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    form[role="form"] {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 0.5em 0 0.2em 0;
+    }
+    header h1 {
+        font-size: 1em;
+        margin-left: 0.5em;
+    }
+    nav ul {
+        gap: 0.7em;
+        font-size: 0.95em;
+    }
+    main {
+        padding: 0.5em;
+    }
+    #about {
+        padding: 0.7em 0.5em;
+    }
+    #projects {
+        padding: 0.5em 0;
+    }
+    .hamburger {
+        right: 0.5em;
+        top: 0.3em;
+    }
+}
+
+/* ...existing code... */
