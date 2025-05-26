@@ -150,7 +150,7 @@ form[role="form"] textarea,
 form[role="form"] button {
     width: 100%;
     max-width: 400px;
-    text-align: center; /* Center text inside fields and labels */
+    text-align: left; /* Ensure text starts at left in all form fields */
     box-sizing: border-box;
 }
 
@@ -180,6 +180,27 @@ form[role="form"] textarea {
 
 form[role="form"] button {
     margin-top: 0.5em;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.85em 2em;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+form[role="form"] button:hover,
+form[role="form"] button:focus {
+    background-color: #0055a5;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+    transform: translateY(-2px) scale(1.03);
 }
 
 #about {
