@@ -5,11 +5,11 @@ function toggleMenu() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuBar = document.getElementById('menu-bar');
     if (menuBar) {
         menuBar.addEventListener('click', toggleMenu);
-        menuBar.addEventListener('keypress', function(e) {
+        menuBar.addEventListener('keypress', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 toggleMenu();
             }
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling for nav links
     document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href').slice(1);
             const target = document.getElementById(targetId);
             if (target) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const filterContainer = document.getElementById('project-filters');
     if (filterContainer) {
-        filterContainer.addEventListener('keydown', function(e) {
+        filterContainer.addEventListener('keydown', function (e) {
             if (e.target.tagName === 'BUTTON' && (e.key === 'Enter' || e.key === ' ')) {
                 e.target.click();
             }
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lightbox for project images
     document.querySelectorAll('.project-image').forEach(img => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             openLightbox(this.src, this.alt);
         });
-        img.addEventListener('keypress', function(e) {
+        img.addEventListener('keypress', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 openLightbox(this.src, this.alt);
             }
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('lightbox-modal');
     if (closeBtn && modal) {
         closeBtn.addEventListener('click', closeLightbox);
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) closeLightbox();
         });
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (modal.classList.contains('active') && (e.key === 'Escape' || e.key === 'Esc')) {
                 closeLightbox();
             }
@@ -163,32 +163,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Show feedback only on blur (when leaving the field)
-        nameField.addEventListener('blur', function() {
+        nameField.addEventListener('blur', function () {
             validateField(nameField, nameFeedback, 'name');
         });
-        emailField.addEventListener('blur', function() {
+        emailField.addEventListener('blur', function () {
             validateField(emailField, emailFeedback, 'email');
         });
-        messageField.addEventListener('blur', function() {
+        messageField.addEventListener('blur', function () {
             validateField(messageField, messageFeedback, 'message');
         });
 
         // Hide feedback on input (while typing)
-        nameField.addEventListener('input', function() {
+        nameField.addEventListener('input', function () {
             nameFeedback.textContent = '';
             nameFeedback.style.display = 'none';
         });
-        emailField.addEventListener('input', function() {
+        emailField.addEventListener('input', function () {
             emailFeedback.textContent = '';
             emailFeedback.style.display = 'none';
         });
-        messageField.addEventListener('input', function() {
+        messageField.addEventListener('input', function () {
             messageFeedback.textContent = '';
             messageFeedback.style.display = 'none';
         });
 
         // Validate all fields and show feedback on submit
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             let valid = true;
             if (!validateField(nameField, nameFeedback, 'name')) valid = false;
             if (!validateField(emailField, emailFeedback, 'email')) valid = false;
@@ -196,28 +196,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!valid) {
                 e.preventDefault();
             } else {
-                // Only allow actual submit if triggered by the button (not Enter in a field)
-                if (
-                    document.activeElement === contactForm.querySelector('button[type="submit"]')
-                ) {
-                    // Let the form submit (or show a success message if desired)
-                    // e.preventDefault(); // Uncomment if you want to prevent actual submission
-                    contactForm.reset();
-                    nameFeedback.style.display = 'none';
-                    emailFeedback.style.display = 'none';
-                    messageFeedback.style.display = 'none';
-                } else {
-                    // Prevent submit if not from the button (e.g., Enter in a field)
-                    e.preventDefault();
-                    // Optionally move focus to the submit button
-                    contactForm.querySelector('button[type="submit"]').focus();
-                }
+                e.preventDefault(); // prevent actual submission if you want to show a message
+                alert("Thank you for your message!");
+                contactForm.reset();
+                nameFeedback.style.display = 'none';
+                emailFeedback.style.display = 'none';
+                messageFeedback.style.display = 'none';
             }
         });
 
         // Validate on pressing Enter in any input except textarea
         [nameField, emailField].forEach(field => {
-            field.addEventListener('keydown', function(e) {
+            field.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter') {
                     // Move focus to next field, do not submit
                     e.preventDefault();
